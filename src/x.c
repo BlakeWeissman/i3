@@ -682,7 +682,7 @@ void x_draw_decoration(Con *con) {
         goto copy_pixmaps;
     }
 
-    if (win->icon)
+    if (win && win->icon)
         text_offset_x = 18;
 
     int title_offset_x;
@@ -709,7 +709,7 @@ void x_draw_decoration(Con *con) {
 
     draw_util_text(title, &(parent->frame_buffer),
                    p->color->text, p->color->background,
-                   con->deco_rect.x + text_offset_x + logical_px(2),
+                   con->deco_rect.x + text_offset_x + title_offset_x,
                    con->deco_rect.y + text_offset_y,
                    deco_width - mark_width - 2 * title_padding);
 
@@ -718,7 +718,7 @@ void x_draw_decoration(Con *con) {
     }
 
     /* Draw the icon */
-    if (win->icon) {
+    if (win && win->icon) {
         uint16_t width = 16;
         uint16_t height = 16;
 
@@ -734,6 +734,7 @@ void x_draw_decoration(Con *con) {
                 width,
                 height);
     }
+
 
     x_draw_decoration_after_title(con, p);
 copy_pixmaps:
