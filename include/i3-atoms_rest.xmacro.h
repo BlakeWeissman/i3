@@ -18,5 +18,6 @@ xmacro(I3_PID) \
 xmacro(I3_FLOATING_WINDOW) \
 xmacro(_NET_REQUEST_FRAME_EXTENTS) \
 xmacro(_NET_FRAME_EXTENTS) \
+xmacro(_NET_WM_ICON) \
 xmacro(_MOTIF_WM_HINTS) \
 xmacro(WM_CHANGE_STATE)

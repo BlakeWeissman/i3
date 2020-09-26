@@ -408,6 +408,11 @@ struct xoutput {
 struct Window {
     xcb_window_t id;
 
+    /** Window icon, as array of ARGB pixels */
+    uint32_t* icon;
+    int icon_width;
+    int icon_height;
+
     /** Holds the xcb_window_t (just an ID) for the leader window (logical
      * parent for toolwindows and similar floating windows) */
     xcb_window_t leader;
